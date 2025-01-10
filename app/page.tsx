@@ -40,7 +40,7 @@ export default function Home() {
           <SideNavbar activeComponent={activeComponent} setActiveComponent={setActiveComponent} />
         </div>
       </div>
-      <div className='flex-1 lg:ml-44 xl:ml-52 2xl:ml-72 w-full'>
+      <div className='flex-1 lg:ml-44 xl:ml-52 2xl:ml-64 w-full'>
         <div className='left-80'>
           {renderComponent()}
         </div>
