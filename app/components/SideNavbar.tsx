@@ -26,11 +26,11 @@ const SideNavbar = ({ activeComponent, setActiveComponent }: SideNavbarProps) =>
         { location: "Setting", icon: <IoSettings size={24} />, name: "Setting" },
     ];
     return (
-        <div className='bg-white flex justify-center'>
+        <div className='bg-white flex justify-center border-r-2 border-[#E6EFF5]'>
             <ul className='space-y-2'>
-                <div className='flex items-center space-x-4 py-8 pl-8'>
+                <div className='flex items-center space-x-4 pl-[27px] pt-10 pb-8 xl:pl-8'>
                     <Image className='w-[36px] h-[36px]' src={"/Images/logo.png"} alt='Imgae for bankdash' height={500} width={500} />
-                    <p className='text-[25px] font-extrabold text-logoColor'>BankDash</p>
+                    <p className='text-[20px] xl:text-[25px] font-extrabold text-logoColor'>BankDash</p>
                 </div>
                 {menuItems.map((item) => (
                     <li
