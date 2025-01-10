@@ -1,3 +1,4 @@
 @tailwind base;
+@import '@mantine/core/styles/global.css';
 @tailwind components;
 @tailwind utilities;
