@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { Lato } from 'next/font/google'
 
 interface CardsProps {
     className?: string,
@@ -15,6 +16,8 @@ interface CardsProps {
     masterCardImage: string
     balanceClass?: string
 }
+
+const lato = Lato({ subsets: ['latin-ext'], weight: ['400', '900'] })
 
 const Cards = (
     {
@@ -33,12 +36,12 @@ const Cards = (
     }: CardsProps
 ) => {
     return (
-        <div className={`${className}  pt-6 px-6 rounded-3xl h-[235px] w-[350px] 3xl:w-[450px] 3xl:h-[270px] flex flex-col justify-between relative`}>
+        <div className={`${className} ${lato.className}  pt-6 px-6 rounded-3xl w-[450px] h-[270px] 2xl:h-[235px] 2xl:w-[350px] 3xl:w-[450px] 3xl:h-[270px] flex flex-col justify-between relative`}>
             {/* CREDIT CARD BALANCE */}
             <div className='flex items-center justify-between'>
                 <div className={`${balanceClassName} text-sm`}>
-                    <p className={`${balanceClass}`}>Balance</p>
-                    <p className='text-[20px]'>${balance}</p>
+                    <p className={`${balanceClass} font-normal`}>Balance</p>
+                    <p className='text-[20px] pt-2'>${balance}</p>
                 </div>
                 <div>
                     <Image src={imageSrc} alt='Card chip Image' height={500} width={500} className='w-[36px] h-[36px]' />
