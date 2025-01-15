@@ -4,12 +4,14 @@ import { BiMenuAltLeft } from 'react-icons/bi'
 import { BsSearch } from 'react-icons/bs'
 import { IoSettings } from 'react-icons/io5'
 import { LuBellDot } from 'react-icons/lu'
+import { Inter } from 'next/font/google'
 import { RiCloseFill } from 'react-icons/ri'
 
 interface NavbarProps {
     title: string
 }
 
+const inter = Inter({ subsets: ['latin'] })
 
 const Navbar = ({ title }: NavbarProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -46,7 +48,7 @@ const Navbar = ({ title }: NavbarProps) => {
     }, [isOpen]);
 
     return (
-        <div className='bg-white w-full px-3 sssm:px-6 sm:px-10 lg:border-b-2 py-6 xl:py-[33px] shadow-lg lg:shadow-none'>
+        <div className={`bg-white w-full px-3 sssm:px-6 sm:px-10 lg:border-b-2 py-6 xl:py-[33px] shadow-lg lg:shadow-none ${inter.className}`}>
             <div className=' flex items-center justify-between border-[#E6EFF5]'>
                 <div className="relative lg:hidden w-6 h-6 overflow-hidden hover:cursor-pointer" onClick={toggleMenu} ref={toggleButtonRef}>
                     <div className={`absolute inset-0 transition-transform duration-300 ${isOpen ? 'rotate-180 scale-0' : 'rotate-0 scale-100'}`}>
