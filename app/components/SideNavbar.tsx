@@ -7,11 +7,14 @@ import { GoHomeFill } from 'react-icons/go';
 import { GrTransaction } from 'react-icons/gr';
 import { IoSettings } from 'react-icons/io5';
 import { PiLightbulbFill } from 'react-icons/pi';
+import { Inter } from 'next/font/google';
 
 interface SideNavbarProps {
     activeComponent: string,
     setActiveComponent: (component: string) => void
 }
+
+const inter = Inter({ subsets: ['latin'], weight: ['400', '900'] })
 
 const SideNavbar = ({ activeComponent, setActiveComponent }: SideNavbarProps) => {
     const menuItems = [
@@ -26,7 +29,7 @@ const SideNavbar = ({ activeComponent, setActiveComponent }: SideNavbarProps) =>
         { location: "Setting", icon: <IoSettings size={24} />, name: "Setting" },
     ];
     return (
-        <div className='bg-white flex justify-center border-r-2 border-[#E6EFF5]'>
+        <div className={`bg-white flex justify-center border-r-2 border-[#E6EFF5] ${inter.className}`}>
             <ul className='space-y-2'>
                 <div className='flex items-center space-x-4 pl-[27px] pt-10 pb-8 xl:pl-8'>
                     <Image className='w-[36px] h-[36px]' src={"/Images/logo.png"} alt='Imgae for bankdash' height={500} width={500} />
@@ -36,7 +39,7 @@ const SideNavbar = ({ activeComponent, setActiveComponent }: SideNavbarProps) =>
                     <li
                         key={item.location}
                         onClick={() => setActiveComponent(item.location)}
-                        className={`flex items-center select-none pl-5 font-semibold space-x-4 hover:cursor-pointer lg:w-48 xl:w-56 2xl:w-64 py-5 text-[#666] hover:rounded-md text-sm 
+                        className={`flex items-center select-none pl-5 space-x-4 hover:cursor-pointer lg:w-48 xl:w-56 2xl:w-64 py-5 text-[#666] hover:rounded-md text-sm 
                             ${activeComponent === item.location ? 'text-primary rounded-md duration-300 ease-in' : 'hover:text-primary'}`}>
                         <p className={`${activeComponent === item.location ? 'absolute rounded-tr-md rounded-br-md w-[6px] bg-primary h-[60px] -ml-5' : ''}`}></p>
                         <p className={`ml-5 ${activeComponent === item.location ? 'text-primary rounded-md duration-300 ease-in' : ''}`}>{item.icon}</p>
